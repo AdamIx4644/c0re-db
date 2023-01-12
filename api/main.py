@@ -1,5 +1,5 @@
 from flask import Flask, request, redirect, render_template, url_for
-
+from serverless_wsgi import WSGIApplication
 
 
 app = Flask(__name__, static_folder='.')
@@ -13,5 +13,4 @@ def button():
 
 
 
-if __name__ == '__main__':
-    app.run(port=6969)
+wsgi_app = WSGIApplication(app)
