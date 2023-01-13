@@ -1,14 +1,9 @@
-from flask import Flask, request, redirect, render_template, url_for
-
-
-
+from flask import Flask, jsonify
 app = Flask(__name__)
 
-
 @app.route('/')
-def button():
-    # Generate the OAuth2 URL to redirect the user to the Discord login page
-    return "hello world"
+def index():
+    return jsonify(message="Hello, World!")
 
 if __name__ == '__main__':
-    app.run(port=6950)
+    app.run(port=6910)
